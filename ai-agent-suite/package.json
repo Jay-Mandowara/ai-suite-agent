@@ -1,0 +1,61 @@
+{
+    "name": "ai-agent-suite",
+    "version": "1.0.0",
+    "description": "AI Agent Management System",
+    "scripts": {
+        "dev": "concurrently \"npm run dev:frontend\" \"npm run dev:backend\" \"npm run dev:ai-service\"",
+        "dev:frontend": "cd frontend && npm start",
+        "dev:backend": "cd backend && npm run dev",
+        "dev:ai-service": "cd ai-service && uvicorn app.main:app --reload --host 0.0.0.0 --port 8000",
+        "build": "npm run build:frontend && npm run build:backend",
+        "build:frontend": "cd frontend && npm run build",
+        "build:backend": "cd backend && npm run build",
+        "test": "npm run test:frontend && npm run test:backend && npm run test:ai-service",
+        "test:frontend": "cd frontend && npm test",
+        "test:backend": "cd backend && npm test",
+        "test:ai-service": "cd ai-service && pytest",
+        "lint": "npm run lint:frontend && npm run lint:backend",
+        "lint:frontend": "cd frontend && npm run lint",
+        "lint:backend": "cd backend && npm run lint",
+        "docker:dev": "docker-compose -f docker/docker-compose.dev.yml up",
+        "docker:prod": "docker-compose -f docker/docker-compose.prod.yml up",
+        "deploy:dev": "./scripts/deployment/deploy.sh dev",
+        "deploy:prod": "./scripts/deployment/deploy.sh prod"
+    },
+    "devDependencies": {
+        "concurrently": "^7.6.0",
+        "husky": "^8.0.3",
+        "lint-staged": "^13.2.0"
+    }
+}
+
+{
+    "name": "ai-agent-suite",
+    "version": "1.0.0",
+    "description": "AI Agent Management System",
+    "scripts": {
+        "dev": "concurrently \"npm run dev:frontend\" \"npm run dev:backend\" \"npm run dev:ai-service\"",
+        "dev:frontend": "cd frontend && npm start",
+        "dev:backend": "cd backend && npm run dev",
+        "dev:ai-service": "cd ai-service && uvicorn app.main:app --reload --host 0.0.0.0 --port 8000",
+        "build": "npm run build:frontend && npm run build:backend",
+        "build:frontend": "cd frontend && npm run build",
+        "build:backend": "cd backend && npm run build",
+        "test": "npm run test:frontend && npm run test:backend && npm run test:ai-service",
+        "test:frontend": "cd frontend && npm test",
+        "test:backend": "cd backend && npm test",
+        "test:ai-service": "cd ai-service && pytest",
+        "lint": "npm run lint:frontend && npm run lint:backend",
+        "lint:frontend": "cd frontend && npm run lint",
+        "lint:backend": "cd backend && npm run lint",
+        "docker:dev": "docker-compose -f docker/docker-compose.dev.yml up",
+        "docker:prod": "docker-compose -f docker/docker-compose.prod.yml up",
+        "deploy:dev": "./scripts/deployment/deploy.sh dev",
+        "deploy:prod": "./scripts/deployment/deploy.sh prod"
+    },
+    "devDependencies": {
+        "concurrently": "^7.6.0",
+        "husky": "^8.0.3",
+        "lint-staged": "^13.2.0"
+    }
+}
